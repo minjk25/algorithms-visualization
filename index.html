@@ -24,7 +24,78 @@
         </div>
     </header>
 
-    <main></main>
+    <main>
+        <section class="card">
+
+            <div>section 01 - Choose algorithms</div>
+            <div>
+                <!-- this div will contain mutiple options of algorithms -->
+                <button>
+                    <span>Bubble Sort</span>
+                    <span>O(n²)</span>
+                </button>
+                <button>
+                    <span>Insertion Sort</span>
+                    <span>O(n²)</span>
+                </button>
+                <button>
+                    <span>Selection Sort</span>
+                    <span>O(n²)</span>
+                </button>
+                <button>
+                    <span>Merge Sort</span>
+                    <span>O(n log n)</span>
+                </button>
+                <button>
+                    <span>Quick Sort</span>
+                    <span>O(n log n)</span>
+                </button>
+            </div>
+
+            <div>section 02 - Configurations</div>
+            <div>
+                <!-- this div will contain mutiple options of control configurations -->
+                <div>
+                    <label>Array size <span>20</span></label>
+                    <input type="range" id="sizeSlider" min="6" max="40" value="20" step="1" />
+                </div>
+                <div>
+                    <label>Speed <span>5</span></label>
+                    <input type="range" id="speedSlider" min="1" max="10" value="5" step="1" />
+                </div>
+                <div>
+                    <label>Mode</label>
+                    <div>
+                        <button id="modeAuto">Auto</button>
+                        <button id="modeStep">Step</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- this div will contain mutiple options of action configurations -->
+                <button id="genBtn">↺ New Array</button>
+                <button id="runBtn" disabled>▶ Run</button>
+                <button id="pauseBtn" disabled>⏸ Pause</button>
+                <button id="resetBtn">✕ Reset</button>
+            </div>
+            <div id="step-nav">
+                <button id="stepBack" disabled>← Prev</button>
+                <span id="stepCounter">Step 0 / 0</span>
+                <button id="stepFwd" disabled>Next →</button>
+            </div>
+
+        </section>
+
+        <div class="legend">
+            <div><span style="background:#4a9eff">test</span>Default</div>
+            <div><span style="background:#ff5c5c">test</span>Comparing</div>
+            <div><span style="background:#ffaa00">test</span>Swapping</div>
+            <div><span style="background:#a78bfa">test</span>Pivot / Active</div>
+            <div><span style="background:#4ade80">test</span>Sorted</div>
+        </div>
+
+        <section id="visualizer-area"></section>
+    </main>
 </body>
 
 </html>
