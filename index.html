@@ -27,32 +27,34 @@
     <main>
         <section class="card">
 
-            <div>section 01 - Choose algorithms</div>
-            <div>
+            <div class="section-label">section 01 - Choose algorithms</div>
+            <div id="algo-buttons">
                 <!-- this div will contain mutiple options of algorithms -->
-                <button>
-                    <span>Bubble Sort</span>
-                    <span>O(n²)</span>
+                <button class="algo-btn" data-algo="bubble">
+                    <span class="algo-name">Bubble Sort</span>
+                    <span class="algo-complexity">O(n²)</span>
                 </button>
-                <button>
-                    <span>Insertion Sort</span>
-                    <span>O(n²)</span>
+                <button class="algo-btn" data-algo="insertion">
+                    <span class="algo-name">Insertion Sort</span>
+                    <span class="algo-complexity">O(n²)</span>
                 </button>
-                <button>
-                    <span>Selection Sort</span>
-                    <span>O(n²)</span>
+                <button class="algo-btn" data-algo="selection">
+                    <span class="algo-name">Selection Sort</span>
+                    <span class="algo-complexity">O(n²)</span>
                 </button>
-                <button>
-                    <span>Merge Sort</span>
-                    <span>O(n log n)</span>
+                <button class="algo-btn" data-algo="merge">
+                    <span class="algo-name">Merge Sort</span>
+                    <span class="algo-complexity">O(n log n)</span>
                 </button>
-                <button>
-                    <span>Quick Sort</span>
-                    <span>O(n log n)</span>
+                <button class="algo-btn" data-algo="quick">
+                    <span class="algo-name">Quick Sort</span>
+                    <span class="algo-complexity">O(n log n)</span>
                 </button>
             </div>
 
-            <div>section 02 - Configurations</div>
+            <div id="selection-hint">You can select up to 2 algorithms</div>
+
+            <div class="section-label" style="margin-top:28px">section 02 - Configurations</div>
             <div>
                 <!-- this div will contain mutiple options of control configurations -->
                 <div>
@@ -73,15 +75,17 @@
             </div>
             <div>
                 <!-- this div will contain mutiple options of action configurations -->
-                <button id="genBtn">↺ New Array</button>
-                <button id="runBtn" disabled>▶ Run</button>
-                <button id="pauseBtn" disabled>⏸ Pause</button>
-                <button id="resetBtn">✕ Reset</button>
-            </div>
-            <div id="step-nav">
-                <button id="stepBack" disabled>← Prev</button>
-                <span id="stepCounter">Step 0 / 0</span>
-                <button id="stepFwd" disabled>Next →</button>
+                <div>
+                    <button id="genBtn">↺ New Array</button>
+                    <button id="runBtn" disabled>▶ Run</button>
+                    <button id="pauseBtn" disabled>⏸ Pause</button>
+                    <button id="resetBtn">✕ Reset</button>
+                </div>
+                <div id="step-nav">
+                    <button id="stepBack" disabled>← Prev</button>
+                    <span id="stepCounter">Step 0 / 0</span>
+                    <button id="stepFwd" disabled>Next →</button>
+                </div>
             </div>
 
         </section>
@@ -96,6 +100,8 @@
 
         <section id="visualizer-area"></section>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
