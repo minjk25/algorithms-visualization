@@ -1,7 +1,7 @@
 // State
 let selected = [];
 
-// Helper
+// Helper functions
 function updateSelectionHint() {
     const hint = document.getElementById('selection-hint');
     if (selected.length === 0) {
@@ -27,4 +27,32 @@ document.querySelectorAll('.algo-btn').forEach((btn) => {
         updateSelectionHint();
         document.getElementById('runBtn').disabled = selected.length === 0;
     });
+});
+
+// Sliders - Array size
+document.getElementById('sizeSlider').addEventListener('input', function () {
+    document.getElementById('sizeOut').textContent = this.value;
+});
+
+// Sliders - Speed
+document.getElementById('speedSlider').addEventListener('input', function () {
+    document.getElementById('speedOut').textContent = this.value;
+});
+
+// Mode toggle
+document.getElementById('modeAuto').addEventListener('click', () => {
+    mode = 'auto';
+    document.getElementById('modeAuto').classList.add('active');
+    document.getElementById('modeStep').classList.remove('active');
+    document.getElementById('action-bar').style.display = 'flex';
+    document.getElementById('step-nav').style.display = 'none';
+
+});
+document.getElementById('modeStep').addEventListener('click', () => {
+    mode = 'step';
+    document.getElementById('modeStep').classList.add('active');
+    document.getElementById('modeAuto').classList.remove('active');
+    document.getElementById('action-bar').style.display = 'none';
+    document.getElementById('step-nav').style.display = 'flex';
+
 });

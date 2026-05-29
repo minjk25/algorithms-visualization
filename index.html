@@ -55,47 +55,47 @@
             <div id="selection-hint">You can select up to 2 algorithms</div>
 
             <div class="section-label" style="margin-top:28px">section 02 - Configurations</div>
-            <div>
+            <div id="controls">
                 <!-- this div will contain mutiple options of control configurations -->
-                <div>
-                    <label>Array size <span>20</span></label>
+                <div class="control-group">
+                    <label class="ctrl-label">Array size <span id="sizeOut" class="ctrl-val">20</span></label>
                     <input type="range" id="sizeSlider" min="6" max="40" value="20" step="1" />
                 </div>
-                <div>
-                    <label>Speed <span>5</span></label>
+                <div class="control-group">
+                    <label class="ctrl-label">Speed <span id="speedOut" class="ctrl-val">5</span></label>
                     <input type="range" id="speedSlider" min="1" max="10" value="5" step="1" />
                 </div>
-                <div>
-                    <label>Mode</label>
-                    <div>
-                        <button id="modeAuto">Auto</button>
-                        <button id="modeStep">Step</button>
+                <div class="control-group">
+                    <label class="ctrl-label">Mode</label>
+                    <div class="mode-toggle">
+                        <button class="mode-btn active" id="modeAuto">Auto</button>
+                        <button class="mode-btn" id="modeStep">Step</button>
                     </div>
                 </div>
             </div>
             <div>
                 <!-- this div will contain mutiple options of action configurations -->
-                <div>
-                    <button id="genBtn">↺ New Array</button>
-                    <button id="runBtn" disabled>▶ Run</button>
-                    <button id="pauseBtn" disabled>⏸ Pause</button>
-                    <button id="resetBtn">✕ Reset</button>
+                <div id="action-bar">
+                    <button class="action-btn secondary" id="genBtn">↺ New Array</button>
+                    <button class="action-btn primary" id="runBtn" disabled>▶ Run</button>
+                    <button class="action-btn secondary" id="pauseBtn" disabled>⏸ Pause</button>
+                    <button class="action-btn secondary" id="resetBtn">✕ Reset</button>
                 </div>
-                <div id="step-nav">
-                    <button id="stepBack" disabled>← Prev</button>
+                <div id="step-nav" style="display:none">
+                    <button class="action-btn secondary" id="stepBack" disabled>← Prev</button>
                     <span id="stepCounter">Step 0 / 0</span>
-                    <button id="stepFwd" disabled>Next →</button>
+                    <button class="action-btn secondary" id="stepFwd" disabled>Next →</button>
                 </div>
             </div>
 
         </section>
 
         <div class="legend">
-            <div><span style="background:#4a9eff">test</span>Default</div>
-            <div><span style="background:#ff5c5c">test</span>Comparing</div>
-            <div><span style="background:#ffaa00">test</span>Swapping</div>
-            <div><span style="background:#a78bfa">test</span>Pivot / Active</div>
-            <div><span style="background:#4ade80">test</span>Sorted</div>
+            <div class="leg"><span class="leg-dot" style="background:#4a9eff"></span>Default</div>
+            <div class="leg"><span class="leg-dot" style="background:#ff5c5c"></span>Comparing</div>
+            <div class="leg"><span class="leg-dot" style="background:#ffaa00"></span>Swapping</div>
+            <div class="leg"><span class="leg-dot" style="background:#a78bfa"></span>Pivot / Active</div>
+            <div class="leg"><span class="leg-dot" style="background:#4ade80"></span>Sorted</div>
         </div>
 
         <section id="visualizer-area"></section>
