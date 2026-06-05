@@ -15,6 +15,7 @@
     --text2: #8888a0;
     --text3: #55556a;
     --accent: #4a9eff;
+    --green: #4ade80;
     --radius: 10px;
     --font-mono: 'JetBrains Mono', monospace;
     --font-sans: 'Space Grotesk', sans-serif;
@@ -110,9 +111,14 @@ main {
     min-width: 140px;
 }
 
-.algo-btn:hover {
+.algo-btn:hover:not(.selected):not(:disabled) {
     border-color: var(--border2);
     background: #222228;
+}
+
+.algo-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
 }
 
 .algo-btn.selected {
@@ -191,6 +197,11 @@ input[type=range]::-webkit-slider-thumb {
     border: 2px solid var(--border2);
 }
 
+input[type=range]:disabled::-webkit-slider-thumb {
+    background: var(--border2);
+    cursor: default;
+}
+
 /* MODE TOGGLE */
 .mode-toggle {
     display: flex;
@@ -217,9 +228,18 @@ input[type=range]::-webkit-slider-thumb {
     font-weight: 500;
 }
 
-.mode-btn:not(.active):hover {
+.mode-btn:not(.active):hover:not(:disabled) {
     background: var(--bg3);
     color: var(--text);
+}
+
+#modeStep:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+#modeAuto:disabled {
+    cursor: default;
 }
 
 /* ACTION BAR */
@@ -238,6 +258,10 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
     border: 1px solid var(--border);
     transition: all 0.15s;
+
+    min-height: 38px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .action-btn.primary {
@@ -263,6 +287,10 @@ input[type=range]::-webkit-slider-thumb {
 .action-btn.secondary:hover:not(:disabled) {
     border-color: var(--border2);
     background: #222228;
+}
+
+#pauseBtn {
+    min-width: 110px;
 }
 
 /* STEP NAV */
@@ -300,4 +328,164 @@ input[type=range]::-webkit-slider-thumb {
     height: 10px;
     border-radius: 2px;
     flex-shrink: 0;
+}
+
+/* VISUALIZER AREA */
+#visualizer-area {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* PANEL */
+.panel {
+    flex: 1;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    min-width: 0;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.panel-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.panel-complexity {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text3);
+    background: var(--bg3);
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.winner-badge {
+    display: none;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(74, 222, 128, 0.15);
+    color: var(--green);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* BAR GRAPH */
+.bar-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 200px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 22px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.bar {
+    flex: 1;
+    min-width: 0;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    transition: height 0.09s ease, background 0.09s ease;
+    background: #4a9eff;
+}
+
+.bar-lbl {
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    color: var(--text3);
+    font-family: var(--font-mono);
+    white-space: nowrap;
+}
+
+/* BAR COLOR STATES */
+.bar-compare {
+    background: #ff5c5c;
+}
+
+.bar-swap {
+    background: #ffaa00;
+}
+
+.bar-sorted {
+    background: #4ade80;
+}
+
+.bar-pivot {
+    background: #a78bfa;
+}
+
+.bar-merge {
+    background: #a78bfa;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    background: var(--bg3);
+    border-radius: 8px;
+    padding: 8px 10px;
+    flex: 1;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.stat-label {
+    font-size: 10px;
+    color: var(--text3);
+    font-family: var(--font-mono);
+    margin-bottom: 3px;
+}
+
+.stat-val {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: var(--font-mono);
+}
+
+.panel-msg {
+    font-size: 13px;
+    color: var(--text2);
+    font-family: var(--font-mono);
+    min-height: 16px;
+    margin-bottom: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+    main {
+        padding: 16px;
+    }
+
+    #visualizer-area {
+        flex-direction: column;
+    }
+
+    .panel {
+        min-width: 100%;
+    }
+
+    .algo-btn {
+        min-width: 110px;
+    }
 }
