@@ -29,7 +29,6 @@
 
             <div class="section-label">section 01 - Choose algorithms</div>
             <div id="algo-buttons">
-                <!-- this div will contain mutiple options of algorithms -->
                 <button class="algo-btn" data-algo="bubble">
                     <span class="algo-name">Bubble Sort</span>
                     <span class="algo-complexity">O(n²)</span>
@@ -56,7 +55,6 @@
 
             <div class="section-label" style="margin-top:28px">section 02 - Configurations</div>
             <div id="controls">
-                <!-- this div will contain mutiple options of control configurations -->
                 <div class="control-group">
                     <label class="ctrl-label">Array size <span id="sizeOut" class="ctrl-val">20</span></label>
                     <input type="range" id="sizeSlider" min="6" max="40" value="20" step="1" />
@@ -74,7 +72,6 @@
                 </div>
             </div>
             <div>
-                <!-- this div will contain mutiple options of action configurations -->
                 <div id="action-bar">
                     <button class="action-btn secondary" id="genBtn">↺ New Array</button>
                     <button class="action-btn primary" id="runBtn" disabled>▶ Run</button>
@@ -101,6 +98,7 @@
         <section id="visualizer-area"></section>
     </main>
 
+    <script src="js/algorithms/selection.js"></script>
     <script src="js/algorithms/insertion.js"></script>
     <script src="js/algorithms/bubble.js"></script>
     <script src="js/visualizer.js"></script>

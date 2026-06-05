@@ -1,6 +1,7 @@
 const ALGOS = {
     bubble: { fn: bubbleSort },
     insertion: { fn: insertionSort },
+    selection: { fn: selectionSort },
 };
 
 // State
