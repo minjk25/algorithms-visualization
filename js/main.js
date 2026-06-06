@@ -3,6 +3,7 @@ const ALGOS = {
     insertion: { fn: insertionSort },
     selection: { fn: selectionSort },
     merge: { fn: mergeSort },
+    quick: { fn: quickSort },
 };
 
 // State
