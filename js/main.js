@@ -74,6 +74,35 @@ function rebuildPanels() {
         document.getElementById('stepBack').disabled = true;
         document.getElementById('stepFwd').disabled = true;
     }
+
+    if (document.getElementById('codeJS-panel-0')) {
+        document.getElementById('codeJS-panel-0').addEventListener('click', () => {
+            document.getElementById('codeJS-panel-0').classList.add('active');
+            document.getElementById('codePy-panel-0').classList.remove('active');
+            document.getElementById('code-display-JS-panel-0').style.display = 'block';
+            document.getElementById('code-display-Py-panel-0').style.display = 'none';
+        });
+        document.getElementById('codePy-panel-0').addEventListener('click', () => {
+            document.getElementById('codePy-panel-0').classList.add('active');
+            document.getElementById('codeJS-panel-0').classList.remove('active');
+            document.getElementById('code-display-Py-panel-0').style.display = 'block';
+            document.getElementById('code-display-JS-panel-0').style.display = 'none';
+        });
+    }
+    if (document.getElementById('codeJS-panel-1')) {
+        document.getElementById('codeJS-panel-1').addEventListener('click', () => {
+            document.getElementById('codeJS-panel-1').classList.add('active');
+            document.getElementById('codePy-panel-1').classList.remove('active');
+            document.getElementById('code-display-JS-panel-1').style.display = 'block';
+            document.getElementById('code-display-Py-panel-1').style.display = 'none';
+        });
+        document.getElementById('codePy-panel-1').addEventListener('click', () => {
+            document.getElementById('codePy-panel-1').classList.add('active');
+            document.getElementById('codeJS-panel-1').classList.remove('active');
+            document.getElementById('code-display-Py-panel-1').style.display = 'block';
+            document.getElementById('code-display-JS-panel-1').style.display = 'none';
+        });
+    }
 }
 
 function setRunning(isRunning) {
