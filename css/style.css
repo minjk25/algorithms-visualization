@@ -494,6 +494,12 @@ input[type=range]:disabled::-webkit-slider-thumb {
     font-size: 12px;
     user-select: none;
     list-style: none;
+    color: var(--text2);
+}
+
+.code-toggle summary:hover {
+    background: #292930;
+    color: var(--text);
 }
 
 .code-toggle summary::before {
